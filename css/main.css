@@ -1,0 +1,824 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+}
+
+@font-face {
+  font-family: "Nico Moji";
+  src: url(../fonts/NicoMoji-Regular.ttf);
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arodora Pro";
+  src: url(../fonts/ArodoraPro-Light.otf);
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NEXT ART";
+  src: url(../fonts/NextArtBold.otf);
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arodora Pro";
+  src: url(../fonts/NextArtRegular.otf);
+  font-weight: 4w00;
+  font-display: swap;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@media only screen and (max-width: 1140px) {
+  .container {
+    max-width: 798px;
+  }
+}
+@media only screen and (max-width: 798px) {
+  .container {
+    max-width: 311px;
+  }
+}
+.header {
+  background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%);
+  overflow: hidden;
+}
+.header a {
+  text-decoration: none;
+}
+.header .header__container {
+  padding: 40px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .header__container .header__logo {
+  display: flex;
+  flex: 3;
+}
+.header .header__container .header__logo .header__logo-link {
+  display: flex;
+  align-items: center;
+}
+.header .header__container .header__logo .header__logo-link:hover .header__logo-span {
+  color: #E2A300;
+}
+.header .header__container .header__logo .header__logo-link:hover .header__logo-span::after {
+  width: 100%;
+}
+.header .header__container .header__logo .header__logo-link .header__logo-img {
+  width: 54.17px;
+  height: 34px;
+}
+.header .header__container .header__logo .header__logo-link .header__logo-span {
+  font-family: "Nico Moji";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  color: #FFFFFF;
+  margin-left: 10px;
+  transition: 0.3s;
+  position: relative;
+  display: block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  transition: color 0.3s;
+}
+.header .header__container .header__logo .header__logo-link .header__logo-span::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(87.32deg, #E2A300 4.47%, #E29500 95.53%);
+  left: 0;
+  bottom: -3px;
+  transition: width 0.3s;
+}
+.header .header__container .dropdown__btn {
+  width: 22px;
+  height: 17px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: none;
+  transition: all 0.5s;
+}
+.header .header__container .dropdown__btn .dropdown__line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  position: relative;
+}
+.header .header__container .dropdown__btn .dropdown__line::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  left: 0;
+  top: -7px;
+}
+.header .header__container .dropdown__btn .dropdown__line::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  left: 0;
+  top: 7px;
+}
+.header .header__container .header__nav {
+  display: flex;
+  flex: 9;
+}
+.header .header__container .header__nav .header__list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.header .header__container .header__nav .header__list .header__item .header__link {
+  font-family: "Arodora Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #E4E4E4;
+  position: relative;
+  transition: 0.5s;
+}
+.header .header__container .header__nav .header__list .header__item .header__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  display: block;
+  background: linear-gradient(87.32deg, #E2A300 4.47%, #E29500 95.53%);
+  transition: 0.5s;
+}
+.header .header__container .header__nav .header__list .header__item .header__link:hover::after {
+  width: 100%;
+}
+.header .intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .intro .intro__text {
+  width: 41.25%;
+}
+.header .intro .intro__text .intro__span {
+  font-family: "NEXT ART";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 54px;
+  color: #E4E4E4;
+  display: flex;
+  align-items: center;
+}
+.header .intro .intro__text .intro__span img {
+  width: 45px;
+  margin-left: 5px;
+}
+.header .intro .intro__text .intro__title {
+  font-family: "NEXT ART";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 82px;
+  color: #E4E4E4;
+  margin-top: 27px;
+  margin-bottom: 45px;
+}
+.header .intro .intro__text .intro__subtitle {
+  font-family: "Arodora Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #E4E4E4;
+  margin: 0 0 41px 0;
+}
+.header .intro .intro__text .intro__link {
+  font-family: "NEXT ART";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: #000000;
+  padding: 14px 41px;
+  background: linear-gradient(87.32deg, #E2A300 4.47%, #E29500 95.53%);
+  border-radius: 6px;
+  transition: box-shadow 0.3s;
+}
+.header .intro .intro__text .intro__link:hover {
+  box-shadow: 0px 2px 13px rgba(226, 158, 0, 0.48);
+}
+.header .intro .intro__img {
+  width: 58.75%;
+  display: flex;
+  position: relative;
+}
+.header .intro .intro__img img {
+  width: 100%;
+}
+.header .intro .intro__img .intro__text-img {
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  top: 190px;
+  left: 150px;
+}
+
+@media only screen and (max-width: 1140px) {
+  .header .header__container .header__nav {
+    flex: 6.5;
+  }
+  .header .intro .intro__text .intro__span {
+    font-size: 30px;
+  }
+  .header .intro .intro__text .intro__span img {
+    width: 38px;
+  }
+  .header .intro .intro__text .intro__title {
+    font-size: 42px;
+    margin-top: 0;
+    margin-bottom: 35px;
+    line-height: 65px;
+  }
+  .header .intro .intro__text .intro__link {
+    padding: 10px 37px;
+  }
+  .header .intro .intro__img .intro__text-img {
+    top: 122px;
+    left: 95px;
+    width: 35px;
+    height: 35px;
+  }
+}
+@media only screen and (max-width: 798px) {
+  .header {
+    position: relative;
+  }
+  .header .header__container .dropdown__btn {
+    display: block;
+    z-index: 100000;
+  }
+  .header .header__container .dropdown__btn.opened .dropdown__line {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+  }
+  .header .header__container .dropdown__btn.opened .dropdown__line::before {
+    transform: rotate(38deg) translate(44px, -25px);
+    left: 0px;
+  }
+  .header .header__container .dropdown__btn.opened .dropdown__line::after {
+    transform: rotate(-38deg) translate(44px, 26px);
+    left: 0px;
+  }
+  .header .header__container .header__nav {
+    background: linear-gradient(130.68deg, #414141 0%, #2D2D2D 100.52%);
+    position: absolute;
+    width: 255px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: all 0.3s;
+  }
+  .header .header__container .header__nav .header__list {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .header .header__container .header__nav .header__list .header__item {
+    margin-bottom: 25px;
+  }
+  .header .header__container .dropdown__btn.opened ~ .header__nav {
+    transform: translateX(0);
+  }
+  .header .intro {
+    flex-direction: column;
+    padding-bottom: 45px;
+  }
+  .header .intro .intro__text {
+    width: 100%;
+    text-align: left;
+  }
+  .header .intro .intro__text .intro__title {
+    font-size: 37px;
+  }
+  .header .intro .intro__text .intro__link {
+    font-size: 16px;
+  }
+  .header .intro .intro__img {
+    display: none;
+  }
+}
+.skills {
+  background: linear-gradient(130.68deg, #414141 0%, #2D2D2D 100.52%);
+  padding: 113px 0;
+}
+.skills .skills__container .skills__title {
+  font-family: "NEXT ART";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 54px;
+  margin: 0;
+  text-align: center;
+  color: #E4E4E4;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.skills .skills__container .skills__cards {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 52%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.skills .skills__container .skills__cards .skills__card {
+  width: 47%;
+  padding: 60px 0;
+  border-radius: 29px;
+  background: #2A2A2A;
+  transition: box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.skills .skills__container .skills__cards .skills__card:hover {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.47);
+}
+.skills .skills__container .skills__cards .skills__card .skills__card-img {
+  width: 75px;
+  margin-bottom: 73px;
+}
+.skills .skills__container .skills__cards .skills__card .skills__card-title {
+  font-family: "Arodora Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: #E4E4E4;
+  margin: 0;
+}
+
+@media only screen and (max-width: 1140px) {
+  .skills {
+    padding: 70px 0;
+  }
+  .skills .skills__container .skills__title {
+    font-size: 38px;
+    margin-bottom: 35px;
+  }
+  .skills .skills__container .skills__cards {
+    width: 70%;
+  }
+  .skills .skills__container .skills__cards .skills__card {
+    padding: 40px;
+  }
+}
+@media only screen and (max-width: 798px) {
+  .skills {
+    padding: 45px 0;
+  }
+  .skills .skills__container .skills__title {
+    margin-bottom: 20px;
+  }
+  .skills .skills__container .skills__cards {
+    width: 100%;
+    flex-direction: column;
+  }
+  .skills .skills__container .skills__cards .skills__card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .skills .skills__container .skills__cards .skills__card:last-child {
+    margin-bottom: 0;
+  }
+}
+.about {
+  background: linear-gradient(130.68deg, #414141 0%, #2D2D2D 100.52%);
+  padding: 100px;
+  position: relative;
+  overflow: hidden;
+}
+.about .about__bg-1 {
+  position: absolute;
+  width: 486px;
+  height: 486px;
+  background: url(../../images/about__bg-1.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: 1;
+  left: -170px;
+  bottom: 0;
+}
+.about .about__bg-2 {
+  position: absolute;
+  width: 486px;
+  height: 486px;
+  background: url(../../images/about__bg-2.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: 1;
+  right: -170px;
+  top: 0;
+}
+.about .about__container .about__title {
+  font-family: "NEXT ART";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 54px;
+  margin: 0;
+  text-align: center;
+  color: #E4E4E4;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.about .about__container .about__card {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 378px;
+  background: #2C2C2C;
+  border-radius: 14px;
+  padding: 23px;
+  display: flex;
+  align-items: flex-start;
+  z-index: 10;
+  transition: box-shadow 0.3s;
+}
+.about .about__container .about__card:hover {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.47);
+}
+.about .about__container .about__card--img {
+  width: 23.16%;
+  height: 100%;
+  background: url(../../images/me.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border: 6px solid #686868;
+}
+.about .about__container .about__card .about__text {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.about .about__container .about__card .about__text .about__text-copy {
+  font-family: "Arodora Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #E4E4E4;
+  margin: 0;
+  display: inline-flex;
+  align-items: flex-end;
+}
+.about .about__container .about__card .about__text .about__text-copy img {
+  margin-left: 3px;
+}
+
+@media only screen and (max-width: 1140px) {
+  .about {
+    padding: 70px 0;
+  }
+  .about .about__container .about__title {
+    font-size: 38px;
+  }
+  .about .about__container .about__card .about__card--img {
+    width: 35%;
+  }
+}
+@media only screen and (max-width: 798px) {
+  .about {
+    padding: 45px 0;
+  }
+  .about .about__bg-2 {
+    top: 12px;
+  }
+  .about .about__container .about__title {
+    margin-bottom: 20px;
+    z-index: 100;
+  }
+  .about .about__container .about__card {
+    flex-direction: column;
+  }
+  .about .about__container .about__card .about__card--img {
+    width: 100%;
+  }
+  .about .about__container .about__card .about__text {
+    margin: 0;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .about .about__container .about__card .about__text .about__text-copy {
+    display: inline;
+  }
+  .about .about__container .about__card .about__text .about__text-copy img {
+    margin-bottom: -7px;
+  }
+}
+.portfolio {
+  background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%);
+  padding: 100px 0 150px;
+}
+.portfolio .portfolio__container .portfolio__title {
+  font-family: "NEXT ART";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 54px;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  margin: 0 auto;
+  text-align: right;
+  margin-bottom: 50px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.portfolio .portfolio__container .portfolio__card {
+  width: 80.83%;
+  min-height: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#414141 0%, #2D2D2D 100.52%);
+  border-radius: 29px;
+  transition: box-shadow 0.3s;
+}
+.portfolio .portfolio__container .portfolio__card-span {
+  font-family: "Arodora Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 42px;
+  line-height: 21px;
+  color: #FFFFFF;
+}
+.portfolio .portfolio__container .portfolio__card:hover {
+  box-shadow: 0px 0px 30px rgba(27, 27, 27, 0.8);
+}
+
+@media only screen and (max-width: 1140px) {
+  .portfolio {
+    padding: 70px 0;
+  }
+  .portfolio .portfolio__container .portfolio__title {
+    font-size: 38px;
+  }
+  .portfolio .portfolio__container .portfolio__card {
+    min-height: 400px;
+  }
+}
+@media only screen and (max-width: 798px) {
+  .portfolio {
+    padding: 45px 0;
+  }
+  .portfolio .portfolio__container .portfolio__title {
+    font-size: 38px;
+    margin-bottom: 20px;
+  }
+  .portfolio .portfolio__container .portfolio__card {
+    width: 100%;
+  }
+}
+.footer {
+  background: linear-gradient(130.68deg, #414141 0%, #2D2D2D 100.52%);
+  padding: 50px 0;
+}
+.footer .footer__title {
+  font-family: "NEXT ART";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 82px;
+  color: #E4E4E4;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.footer .footer__container {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+}
+.footer .footer__container .footer__text {
+  margin-top: 10px;
+}
+.footer .footer__container .footer__text .footer__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer .footer__container .footer__text .footer__list .footer__item {
+  margin-right: 35px;
+}
+.footer .footer__container .footer__text .footer__list .footer__item:last-child {
+  margin-right: 0;
+}
+.footer .footer__container .footer__text .footer__list .footer__item .footer__link {
+  font-family: "Arodora Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #E4E4E4;
+  text-decoration: none;
+  position: relative;
+}
+.footer .footer__container .footer__text .footer__list .footer__item .footer__link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(87.32deg, #E2A300 4.47%, #E29500 95.53%);
+  left: 0;
+  bottom: -3px;
+  transition: width 0.3s;
+}
+.footer .footer__container .footer__text .footer__list .footer__item .footer__link:hover::after {
+  width: 100%;
+}
+.footer .footer__container .footer__links {
+  margin-top: 35px;
+}
+.footer .footer__container .footer__links .footer__logo {
+  margin-bottom: 45px;
+  display: none;
+}
+.footer .footer__container .footer__links .footer__logo .footer__logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.footer .footer__container .footer__links .footer__logo .footer__logo-link:hover .footer__logo-span {
+  color: #E2A300;
+}
+.footer .footer__container .footer__links .footer__logo .footer__logo-link:hover .footer__logo-span::after {
+  width: 100%;
+}
+.footer .footer__container .footer__links .footer__logo .footer__logo-link .footer__logo-img {
+  width: 54.17px;
+  height: 34px;
+}
+.footer .footer__container .footer__links .footer__logo .footer__logo-link .footer__logo-span {
+  font-family: "Nico Moji";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  color: #FFFFFF;
+  margin-left: 10px;
+  transition: 0.3s;
+  position: relative;
+  display: block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  transition: color 0.3s;
+}
+.footer .footer__container .footer__links .footer__logo .footer__logo-link .footer__logo-span::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(87.32deg, #E2A300 4.47%, #E29500 95.53%);
+  left: 0;
+  bottom: -3px;
+  transition: width 0.3s;
+}
+.footer .footer__container .footer__links .footer-social__list {
+  display: flex;
+  flex: 5;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.footer .footer__container .footer__links .footer-social__list .footer-social__item {
+  transition: margin 0.3s;
+  margin-right: 35px;
+}
+.footer .footer__container .footer__links .footer-social__list .footer-social__item:last-child {
+  margin-right: 0;
+}
+.footer .footer__container .footer__links .footer-social__list .footer-social__item:hover {
+  color: #00c2ed;
+  margin-top: -5px;
+}
+.footer .footer__container .footer__links .footer-social__list .footer-social__item .footer-social__link {
+  text-decoration: none;
+  color: #E4E4E4;
+  font-size: 28px;
+  transition: color 0.3s;
+}
+.footer .footer__container .footer__links .footer-social__list .footer-social__item .footer-social__link:hover {
+  color: #00c2ed;
+}
+
+@media only screen and (max-width: 798px) {
+  .footer {
+    padding: 60px 0;
+  }
+  .footer .footer__title {
+    line-height: 60px;
+    margin-bottom: 20px;
+  }
+  .footer .footer__container .footer__text .footer__list {
+    margin-top: 0;
+  }
+  .footer .footer__container .footer__text .footer__list .footer__item {
+    margin-right: 10px;
+  }
+  .footer .footer__container .footer__text .footer__list .footer__item:last-child {
+    margin-top: 5px;
+  }
+  .footer .footer__container .footer__links {
+    margin-top: 30px;
+  }
+  .footer .footer__container .footer__links .footer-social__list {
+    flex-wrap: wrap;
+  }
+}
+.to-up {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(87.32deg, #E2A300 4.47%, #E29500 95.53%);
+  text-decoration: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 25px;
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  z-index: 100;
+  transition: all 0.3s;
+}
+.to-up:hover {
+  box-shadow: 0px 0px 15px rgba(226, 149, 0, 0.8);
+  background: #fff;
+  color: #E29500;
+}/*# sourceMappingURL=main.css.map */

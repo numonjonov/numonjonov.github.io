@@ -1,0 +1,82 @@
+.portfolio {
+    background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%);
+    padding: 100px 0 150px;
+
+    .portfolio__container {
+        .portfolio__title {
+            font-family: 'NEXT ART';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 48px;
+            line-height: 54px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            margin: 0 auto;
+            text-align: right;
+            margin-bottom: 50px;
+            width: max-content;
+        }
+
+        .portfolio__card {
+            width: 80.83%;
+            min-height: 600px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(#414141 0%, #2D2D2D 100.52%);
+            border-radius: 29px;
+            transition: box-shadow 0.3s;
+
+
+            &-span {
+                font-family: 'Arodora Pro';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 42px;
+                line-height: 21px;
+                color: #FFFFFF;
+            }
+
+            &:hover {
+                box-shadow: 0px 0px 30px rgba(27, 27, 27, 0.8);
+            }
+
+        }
+
+
+    }
+}
+
+
+
+@media only screen and (max-width: $tablet) {
+    .portfolio {
+        padding: 70px 0;
+        .portfolio__container  {
+
+            .portfolio__title {
+                font-size: 38px;
+            }
+            .portfolio__card {
+                min-height: 400px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $mobile) {
+    .portfolio {
+        padding: 45px 0;
+        .portfolio__container  {
+            .portfolio__title {
+                font-size: 38px;
+                margin-bottom: 20px;
+            }
+            .portfolio__card {
+                width: 100%;
+            }
+        }
+    }
+}
